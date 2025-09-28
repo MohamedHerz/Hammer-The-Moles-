@@ -1,0 +1,23 @@
+.red-time-effect {
+  animation: blink 500ms infinite;
+  color: red;
+}
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  cursor: url("./images/png-transparent-hammer-blacksmith-cartoon-hammers-angle-hammer-blacksmith-thumbnail.png"),
+    auto !important;
+  /* custom pointer doesnt work currently */
+  background-image: url("./images/cartoon-scenery-images-background-copy-space_1179130-878154.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
