@@ -1,18 +1,21 @@
 //global var
 
-mainGrid = [
-  ["", "", "", "", ""][("", "", "", "", "")][("", "", "", "", "")][
-    ("", "", "", "", "")
-  ][("", "", "", "", "")],
-]
+mainGrid = ["", "", "", "", ""]
 
 isDone = false
+clicked = false
 
 //functions
 
 function StartGame() {
   //loop thru maingrid and active random cells every 2 second
   //everytime an active cell is clicked add points and pass to scoreBoard
+
+  if (PlayingTime !== 0) {
+    let holes = document.querySelectorAll(".hole")
+    let random = holes[Math.floor(Math.random() * 15)]
+    random.classList.add("mole")
+  }
 }
 function scoreBoard() {
   //store and show scores of current game and previous attempts
@@ -31,7 +34,7 @@ function timer() {
   //timer font goes red and flash in last 10sec
   //maybe use a tic sound for the time
   let countDown = document.querySelector(".count-down")
-  let PlayingTime = 60
+  PlayingTime = 40
   const Mycounter = setInterval(() => {
     PlayingTime--
     if (PlayingTime <= -1) {
@@ -39,11 +42,14 @@ function timer() {
       clearInterval(Mycounter)
       //switch time text to: time up!
       countDown.innerText = `Time Up`
-    } else if (PlayingTime <= 10) {
+    } else if (PlayingTime <= 5) {
       //switch time display text to red + UI effect like flashing
       countDown.classList.add("red-time-effect")
       countDown.innerText = `${PlayingTime}s`
     } else {
+      StartGame()
+      clicked = true
+      const popMoles = setInterval(StartGame, 5000)
       countDown.innerText = `${PlayingTime}s`
       //display countdown on ui
     }
