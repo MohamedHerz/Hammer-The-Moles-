@@ -1,9 +1,9 @@
 //global var
 
-mainGrid = ["", "", "", "", ""]
-
 isDone = false
 clicked = false
+let moleInterval
+let score = 0
 
 //functions
 
@@ -11,22 +11,24 @@ function StartGame() {
   //loop thru maingrid and active random cells every 2 second
   //everytime an active cell is clicked add points and pass to scoreBoard
 
-  if (PlayingTime !== 0) {
-    let holes = document.querySelectorAll(".hole")
-    let random = holes[Math.floor(Math.random() * 15)]
-    random.classList.add("mole")
-  }
+  let holes = document.querySelectorAll(".hole")
+  holes.forEach((hole) => hole.classList.remove("mole"))
+  let random = holes[Math.floor(Math.random() * holes.length)]
+  random.classList.add("mole")
+  random.addEventListener("click", hammerActive)
+}
+
+function hammerActive() {
+  score++
+  let playerScore = document.querySelector(".player-score")
+  playerScore.innerText = `score: ${score}`
 }
 function scoreBoard() {
   //store and show scores of current game and previous attempts
   //show green arrow up if the current score is higher than previous attempt, red arrow down if lower
   //
-
-  let scoreList = []
-  let score = 0
-  if (isDone == true) {
-    scoreList.push(score)
-  }
+  let playerScore = document.querySelector(".player-score")
+  playerScore.innerText = `score: ${score}`
 }
 
 function timer() {
@@ -40,6 +42,7 @@ function timer() {
     if (PlayingTime <= -1) {
       isDone = true
       clearInterval(Mycounter)
+      clearInterval(moleInterval)
       //switch time text to: time up!
       countDown.innerText = `Time Up`
     } else if (PlayingTime <= 5) {
@@ -47,15 +50,17 @@ function timer() {
       countDown.classList.add("red-time-effect")
       countDown.innerText = `${PlayingTime}s`
     } else {
-      StartGame()
-      clicked = true
-      const popMoles = setInterval(StartGame, 5000)
+      // StartGame()
       countDown.innerText = `${PlayingTime}s`
       //display countdown on ui
     }
   }, 1000)
+  setTimeout(() => {
+    if (!isDone) {
+      StartGame()
+      moleInterval = setInterval(() => {
+        if (!isDone) StartGame()
+      }, 2000)
+    }
+  }, 3000)
 }
-
-//event listeners
-
-window.onload = StartGame()

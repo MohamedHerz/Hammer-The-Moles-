@@ -27,4 +27,18 @@ add mute button if you gonna add music background to the game
 
 
 
+keep in mind to only add points to score on active cells
+
+how to store the moles that pop up in a different var?
+for each mole hit score++ for each bomb score-- or call gameover()
+add sound per pop up and hits
+sound for timer duration and last 5sec
+
+
+
+
+
+
+
+
 
