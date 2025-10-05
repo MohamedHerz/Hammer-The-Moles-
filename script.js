@@ -4,9 +4,14 @@ isDone = false
 clicked = false
 let moleInterval
 let score = 0
+let scores = 0
 
 //functions
 
+function scoresList() {
+  scores = document.querySelector(".final-score")
+  scores.innerText = `last score: ${score}`
+}
 function StartGame() {
   //loop thru maingrid and active random cells every 2 second
   //everytime an active cell is clicked add points and pass to scoreBoard
@@ -19,7 +24,11 @@ function StartGame() {
 }
 
 function hammerActive() {
-  score++
+  if (isDone == false) {
+    //once time is up score wont change
+    score++
+  }
+
   let playerScore = document.querySelector(".player-score")
   playerScore.innerText = `score: ${score}`
 }
