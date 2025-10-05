@@ -35,6 +35,10 @@ add sound per pop up and hits
 sound for timer duration and last 5sec
 
 
+https://stackoverflow.com/questions/28610365/how-can-i-add-an-event-for-a-one-time-click-to-a-function
+
+how to remove event listener once it clicked once
+
 
 
 

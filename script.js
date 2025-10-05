@@ -20,7 +20,14 @@ function StartGame() {
   holes.forEach((hole) => hole.classList.remove("mole"))
   let random = holes[Math.floor(Math.random() * holes.length)]
   random.classList.add("mole")
-  random.addEventListener("click", hammerActive)
+  random.addEventListener(
+    "click",
+    () => {
+      hammerActive()
+    },
+    { once: true }
+    //once true block removes the event listener after the first click
+  )
 }
 
 function hammerActive() {
