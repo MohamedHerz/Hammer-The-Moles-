@@ -4,13 +4,17 @@ isDone = false
 clicked = false
 let moleInterval
 let score = 0
-let scores = 0
+let scores = []
 
 //functions
 
 function scoresList() {
   scores = document.querySelector(".final-score")
   scores.innerText = `last score: ${score}`
+
+  if (isDone == true) {
+    scores.push(score)
+  }
 }
 function StartGame() {
   //loop thru maingrid and active random cells every 2 second
@@ -59,6 +63,7 @@ function timer() {
       isDone = true
       clearInterval(Mycounter)
       clearInterval(moleInterval)
+
       //switch time text to: time up!
       countDown.innerText = `Time Up`
     } else if (PlayingTime <= 5) {
