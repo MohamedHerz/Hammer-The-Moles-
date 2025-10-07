@@ -34,6 +34,7 @@ body {
   color: aliceblue;
   cursor: pointer;
 }
+
 .hole-container {
   padding: 300px;
   display: grid;
