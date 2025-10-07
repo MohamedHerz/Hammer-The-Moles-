@@ -32,7 +32,7 @@
 
 ***
 ### **Personal insight**
-#### Thought out coding this project I have mostly faced challenges with SetInterval method, also changed some of the ideas I had about the game design
+#### Thought out coding this project I have mostly faced challenges with SetInterval method, also changed some of the ideas I had about the game design and faced difficulties applying other ideas such as adding a function to randomly pop up a trap or a bomb that trigger a gameover function
 
 
 ### ***QA***
