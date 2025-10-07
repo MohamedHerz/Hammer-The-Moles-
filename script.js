@@ -4,18 +4,9 @@ isDone = false
 clicked = false
 let moleInterval
 let score = 0
-let scores = []
 
 //functions
 
-function scoresList() {
-  scores = document.querySelector(".final-score")
-  scores.innerText = `last score: ${score}`
-
-  if (isDone == true) {
-    scores.push(score)
-  }
-}
 function StartGame() {
   //loop thru maingrid and active random cells every 2 second
   //everytime an active cell is clicked add points and pass to scoreBoard
