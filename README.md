@@ -17,22 +17,24 @@
 ***
 
 ### ***Description***
-#### This project is made for GA software eng course in GA for unit1. the game is about hitting moles that pop up randomly, with each hit the player gains scores.
+#### This project is made for GA software eng course in GA for unit1. the game is about hitting moles that appear randomly, with each hit the player gains scores.
 
 
 ***
 ### ***Methods used***
 * SetInterval
+* .math.random
 *  HOF
   * forEach
-* if statement
+* if statements
+* functions
 ***
 ### **Getting started**
-#### Home page will load first it present a short description about the game along with a hyperlink to the github repo of the project, once user clicks on Game button it will load the game page. at the game page user should click on start game to start the timer once started moles will start poping up, with each correct hit player will gain scores until the timer is up after 40 seconds.
+#### Home page will load first it present a short description about the game along with a hyperlink to the github repo of the project, once user clicks on Game button it will load the game page. at the game page user should click on start game to start the timer once started moles will start appearing up, with each correct hit player will gain scores until the timer is up after 40 seconds.
 
 ***
 ### **Personal insight**
-#### Thought out coding this project I have mostly faced challenges with SetInterval method, also changed some of the ideas I had about the game design and faced difficulties applying other ideas such as adding a function to randomly pop up a trap or a bomb that trigger a gameover function. However I have learned a lot while implementing it and got more confident about js coding and front-end web development
+#### Thought out coding this project I have mostly faced challenges with SetInterval method, also changed some of the ideas I had about the game design and faced difficulties applying other ideas such as adding a function to randomly pop up a trap or a bomb that trigger a GameOver function. However I have learned a lot while implementing it and got more confident about js coding and front-end web development and most importantly to plan ahead and use proper documentation and write down my thoughts and ideas to re-visit every now and then.
 
 
 ### ***QA***
