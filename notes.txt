@@ -1,3 +1,5 @@
+this note include my thought process and ideas while coding and a temporary place for saving used resources url, it doesn't represent the final game functionality or design
+
 research how to have the moles come out of their holes frame by frame to make it more animated instead of just poping suddenly
 
 https://www.earthtouchnews.com/media/1282382/screaming-marmot_2015_08_28.jpg?width=500&height=300
