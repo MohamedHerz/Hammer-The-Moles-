@@ -61,7 +61,7 @@ function timer() {
       StartGame()
       moleInterval = setInterval(() => {
         if (!isDone) StartGame()
-      }, 1000)
+      }, 1500)
     }
   }, 3000)
 }
