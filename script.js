@@ -5,8 +5,19 @@ clicked = false
 let moleInterval
 let score = 0
 
+//event listener
+const startButton = document.getElementById("start")
+startButton.addEventListener("click", timer, scoreBoard)
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loadButton = document.getElementById("load")
+  loadButton.addEventListener("click", loadGamePage)
+})
 //functions
 
+function loadGamePage() {
+  window.location.href = "gamePage.html"
+}
 function StartGame() {
   let holes = document.querySelectorAll(".hole")
   holes.forEach((hole) => hole.classList.remove("mole"))
@@ -39,11 +50,11 @@ function scoreBoard() {
 function timer() {
   let countDown = document.querySelector(".count-down")
   PlayingTime = 40
-  const Mycounter = setInterval(() => {
+  const myCounter = setInterval(() => {
     PlayingTime--
     if (PlayingTime <= -1) {
       isDone = true
-      clearInterval(Mycounter)
+      clearInterval(myCounter)
       clearInterval(moleInterval)
 
       //switch time text to: time up!
